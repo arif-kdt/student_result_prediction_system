@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Prediction</title>
+</head>
+<body>
+    <h2>Student Result Prediction System</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        Marks: <input type="number" name="marks" required><br><br>
+        Attendance (%): <input type="number" name="attendance" required><br><br>
+        Assignment Score: <input type="number" name="assignment" required><br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
